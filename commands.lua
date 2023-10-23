@@ -1,5 +1,5 @@
-SPEEDS = 3
-PERCENTAGE_STEP = 33.3
+SPEEDS = 6
+PERCENTAGE_STEP = 16.66
 WAS_ON = false
 
 function RFP.BUTTON_ACTION(idBinding, strCommand, tParams)
@@ -117,6 +117,46 @@ function RFP.TOGGLE(idBinding, strCommand, tParams)
     else
         SetFanValue(100)
     end
+end
+
+function RFP.CYCLE_SPEED_UP(idBinding, strCommand, tParams)
+    local fanSpeedServiceCall = {
+        domain = "fan",
+        service = "increase_speed",
+
+        service_data = {
+        },
+
+        target = {
+            entity_id = EntityID
+        }
+    }
+
+    tParams = {
+        JSON = JSON:encode(fanSpeedServiceCall)
+    }
+
+    C4:SendToProxy(999, "HA_CALL_SERVICE", tParams)
+end
+
+function RFP.CYCLE_SPEED_DOWN(idBinding, strCommand, tParams)
+    local fanSpeedServiceCall = {
+        domain = "fan",
+        service = "decrease_speed",
+
+        service_data = {
+        },
+
+        target = {
+            entity_id = EntityID
+        }
+    }
+
+    tParams = {
+        JSON = JSON:encode(fanSpeedServiceCall)
+    }
+
+    C4:SendToProxy(999, "HA_CALL_SERVICE", tParams)
 end
 
 function RFP.SET_SPEED(idBinding, strCommand, tParams)
