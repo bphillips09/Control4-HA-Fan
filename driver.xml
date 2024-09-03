@@ -2,11 +2,11 @@
 	<copyright>BP</copyright>
 	<creator>BP</creator>
 	<manufacturer>BP</manufacturer>
-	<name>HA Fan (6-speed)</name>
+	<name>HA Fan (9-speed)</name>
 	<model>HA Fan</model>
 	<created>09/10/2023 12:00</created>
-	<modified>11/27/2023 12:00</modified>
-	<version>103</version>
+	<modified>09/03/2024 12:00</modified>
+	<version>104</version>
 	<control>lua_gen</control>
 	<controlmethod>IP</controlmethod>
 	<driver>DriverWorks</driver>
@@ -44,7 +44,7 @@
 		<proxy proxybindingid="5001" name="HA Fan">fan</proxy>
 	</proxies>
 	<capabilities>
-		<discrete_levels>6</discrete_levels>
+		<discrete_levels>9</discrete_levels>
 	</capabilities>
 	<events/>
 	<connections>

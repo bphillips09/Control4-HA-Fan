@@ -1,5 +1,5 @@
-SPEEDS = 6
-PERCENTAGE_STEP = 16.66
+SPEEDS = 9
+PERCENTAGE_STEP = 100/SPEEDS
 WAS_ON = false
 
 function RFP.BUTTON_ACTION(idBinding, strCommand, tParams)
@@ -164,7 +164,7 @@ function RFP.SET_SPEED(idBinding, strCommand, tParams)
 
     local fanSpeedServiceCall = {
         domain = "fan",
-        service = "turn_on",
+        service = "set_percentage",
 
         service_data = {
             percentage = target * PERCENTAGE_STEP
